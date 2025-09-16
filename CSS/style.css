@@ -1,0 +1,276 @@
+*, *:hover, *:active{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    cursor: default;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+:root{
+    --menu__BG : #9966FF;
+    --padding: 10%;
+    --font: 'Press Start 2P', cursive;
+    --fontSize__Big: 26px;
+    --fontSize__Medium: 24px;
+    --settingsColor: #898181;
+    --gold: #FFD700;
+}
+
+/* ================ */
+/*       Меню       */
+/* ================ */
+
+body{
+    font-family: var(--font);
+    max-width: 100%;
+}
+
+.menu{
+    background-color: var(--menu__BG);
+    padding: 20px var(--padding);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu__logo{
+    font-size: var(--fontSize__Big);
+
+}
+
+.money{
+    font-size: var(--fontSize__Medium);
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    color: var(--gold);
+}
+
+
+
+
+.menu__settingsBTN{
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/settings__icon.png);
+    background-size: cover;
+    margin-left: 25px;
+    transition: 1s;
+
+}
+.menu__settingsBTN:hover{
+    cursor: pointer;
+    /* transform: scale(1.1); */
+}
+
+
+/* ======================== */
+/*        настройки         */
+/* ======================== */
+
+.settings{
+    
+    width: 280px;
+    height: 320px;
+    transition: 1s;
+    background-color: white;
+    border: 2px solid black;
+    position: absolute;
+    left: calc( 90% - 160px) ;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    display: none;
+}
+/* заголовок настроек */
+.settings__title{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* кнопки уровней сложности */
+.BTN__lvlComplexity{
+    width: 150px;
+    height: 35px;
+    margin-top: 20px;
+    color: white;
+    font-family: var(--font);
+    outline: none;
+    border-radius: 4px;
+}
+.BTN__lvlComplexity:hover{
+    cursor: pointer;
+}
+
+#BTN__lvlComplexity--eazy{
+    background-color: #00FF00;
+}
+
+#BTN__lvlComplexity--medium{
+    background-color: #FFFF00;
+
+}
+
+#BTN__lvlComplexity--hard{
+    background-color: #FF0000;
+
+}
+/* настройка музыки */
+
+.settings__volume{
+    margin-top: 20px;
+
+}
+
+.volume__title{
+    font-family: 'Roboto', sans-serif;
+    color: var(--settingsColor);
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.volume__circle{
+    background-color: var(--settingsColor);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    position: relative;
+    top: 5.5px;
+    left: 41px;
+
+}
+.volume__circle:hover{
+    cursor: pointer;
+}
+
+
+.volume__line{
+    background-color: var(--settingsColor);
+    height: 1px;
+    width: 200px;
+    margin: 0 auto;
+
+}
+
+
+/* ======================== */
+/*       Игровая зона       */
+/* ======================== */
+
+/* задний фон */
+.gameArea{
+    background-image: url(../img/main.BGv2.jpg);
+    background-size:cover ;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    height: 500px;
+    max-width: 100%;
+    cursor: url(../img/cursor.png);
+    overflow-anchor: hidden;
+}
+
+.gameArea:hover
+{
+    cursor: url('../img/с.png'), pointer;
+    /* cursor: pointer; */
+}
+/* !задний фон */
+
+
+/* утка */
+.duck{
+
+    width: 100px;
+    height: 50px;
+    background-image: url(../img/duck.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;  /* ! absolute */
+    top: 410px; /* 510px */
+
+    animation-name: duck;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.duck_healthBar{
+    position: relative;
+    top: -10px;
+    width: 100px;
+    height: 5px;
+    background-color: red;
+}
+
+/* !утка */
+
+
+
+
+
+/* магазин */
+
+.shop{
+    background-color: #2adf38;
+    /* height: 250px; */
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.shopElement{
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    width: 270px;
+    padding: 27px 30px;
+    align-items: center;
+
+    margin: 20px;
+}
+
+
+
+.shopElement__title{
+    font-size: 19px;
+}
+.shopElement__weaponCheckBox{
+    margin: 0px 10px;
+    background-color: green;
+    color: green;
+}
+
+.shopElement__img{
+    margin-top: 15px;
+    margin-bottom: 28px;
+    height: 120px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.shopElement__img:hover, .shopElement__BTN, .shopElement__BTN__cost{
+    cursor: pointer;
+}
+
+.shopElement__BTN{
+    /* width: 88%; */
+    background-color: #ff4e16;
+    color: white;
+    border-radius: 20px;
+    /* height: 38px; */
+    font-size: 22px;
+    font-weight: 900;
+    padding: 10px 10px;
+}
+.shopElement__BTN__cost{
+    color: var(--gold);
+
+}
+/* !магазин */
+
+
+
+
